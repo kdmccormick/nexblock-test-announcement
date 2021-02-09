@@ -1,9 +1,10 @@
 {
-  "name": "nexblock-test-announcement",
+  "name": "@edx/nexblock-test-announcement",
   "version": "1.0.0",
   "description": "a nexblock for announcement posts",
   "main": "index.js",
   "scripts": {
+    "build": "fedx-scripts webpack",
     "is-es5": "es-check es5 ./dist/*.js",
     "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
     "lint:fix": "fedx-scripts eslint --fix --ext .js --ext .jsx .",
@@ -23,6 +24,7 @@
     "react": "16.13.1"
   },
   "devDependencies": {
+    "@edx/frontend-build": "5.5.5",
     "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "10.4.9",
     "@testing-library/user-event": "12.1.10",

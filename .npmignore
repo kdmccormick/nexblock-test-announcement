@@ -1,0 +1,8 @@
+.eslintignore
+.eslintrc.json
+.gitignore
+docker-compose.yml
+Dockerfile
+npm-debug.log
+
+node_modules

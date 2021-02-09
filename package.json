@@ -1,0 +1,35 @@
+{
+  "name": "nexblock-test-announcement",
+  "version": "1.0.0",
+  "description": "a nexblock for announcement posts",
+  "main": "index.js",
+  "scripts": {
+    "is-es5": "es-check es5 ./dist/*.js",
+    "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
+    "lint:fix": "fedx-scripts eslint --fix --ext .js --ext .jsx .",
+    "test": "fedx-scripts jest --coverage --passWithNoTests --maxWorkers=50%",
+    "start": "NODE_ENV=development BABEL_ENV=development webpack-dev-server --config=config/webpack.dev.config.js --hot --inline --progress",
+    "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdmccormick/nexblock-test-announcement.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@edx/paragon": "12.2.1",
+    "react": "16.13.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "10.4.9",
+    "@testing-library/user-event": "12.1.10",
+    "es-check": "5.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/kdmccormick/nexblock-test-announcement/issues"
+  },
+  "homepage": "https://github.com/kdmccormick/nexblock-test-announcement#readme"
+}

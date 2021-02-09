@@ -1,37 +1,65 @@
 {
   "name": "@edx/nexblock-test-announcement",
-  "version": "1.0.0",
-  "description": "a nexblock for announcement posts",
-  "main": "index.js",
-  "scripts": {
-    "build": "fedx-scripts webpack",
-    "is-es5": "es-check es5 ./dist/*.js",
-    "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
-    "lint:fix": "fedx-scripts eslint --fix --ext .js --ext .jsx .",
-    "test": "fedx-scripts jest --coverage --passWithNoTests --maxWorkers=50%",
-    "start": "NODE_ENV=development BABEL_ENV=development webpack-dev-server --config=config/webpack.dev.config.js --hot --inline --progress",
-    "debug-test": "node --inspect-brk node_modules/.bin/jest --runInBand --coverage"
-  },
+  "version": "0.1.0",
+  "description": "A nexblock for announcement posts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kdmccormick/nexblock-test-announcement.git"
   },
-  "author": "",
-  "license": "AGPL-3.0",
-  "dependencies": {
-    "@babel/plugin-transform-runtime": "7.12.1",
-    "@edx/paragon": "12.2.1",
-    "react": "16.13.1"
+  "browserslist": [
+    "last 2 versions",
+    "ie 11"
+  ],
+  "scripts": {
+    "build": "fedx-scripts webpack",
+    "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
+    "is-es5": "es-check es5 ./dist/*.js",
+    "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
+    "snapshot": "fedx-scripts jest --updateSnapshot",
+    "start": "fedx-scripts webpack-dev-server --progress",
+    "test": "fedx-scripts jest --coverage --passWithNoTests"
   },
-  "devDependencies": {
-    "@edx/frontend-build": "5.5.5",
-    "@testing-library/jest-dom": "^5.10.1",
-    "@testing-library/react": "10.4.9",
-    "@testing-library/user-event": "12.1.10",
-    "es-check": "5.1.0"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "author": "edX",
+  "license": "AGPL-3.0",
+  "homepage": "https://github.com/kdmccormick/nexblock-test-announcement#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/kdmccormick/nexblock-test-announcement/issues"
   },
-  "homepage": "https://github.com/kdmccormick/nexblock-test-announcement#readme"
+  "dependencies": {
+    "@edx/brand": "npm:@edx/brand-openedx@1.1.0",
+    "@edx/frontend-component-footer": "10.1.4",
+    "@edx/frontend-component-header": "2.2.4",
+    "@edx/frontend-platform": "1.8.4",
+    "@edx/paragon": "12.0.5",
+    "@fortawesome/fontawesome-svg-core": "1.2.34",
+    "@fortawesome/free-brands-svg-icons": "5.11.2",
+    "@fortawesome/free-regular-svg-icons": "5.11.2",
+    "@fortawesome/free-solid-svg-icons": "5.11.2",
+    "@fortawesome/react-fontawesome": "0.1.14",
+    "babel-polyfill": "6.26.0",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-redux": "7.1.3",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2",
+    "redux": "4.0.5"
+  },
+  "devDependencies": {
+    "@edx/frontend-build": "5.5.5",
+    "codecov": "3.7.2",
+    "es-check": "5.1.4",
+    "glob": "7.1.6",
+    "husky": "3.1.0",
+    "jest": "24.9.0",
+    "reactifex": "1.1.1"
+  }
 }

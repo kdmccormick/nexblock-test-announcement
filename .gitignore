@@ -1,9 +1,19 @@
-.vscode
 .DS_Store
 .eslintcache
+.idea
 node_modules
-npm_debug.log
+npm-debug.log
 coverage
+module.config.js
 
-# emacs
+dist/
+src/i18n/transifex_input.json
+temp/babel-plugin-react-intl
+
+### pyenv ###
+.python-version
+
+### Emacs ###
 *~
+/temp
+/.vscode

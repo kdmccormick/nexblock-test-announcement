@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 import ExamplePage from './example/ExamplePage';
-import { Announcement } from './ui/learner/Announcement';
+import Announcement from './ui/learner/Announcement';
 import NotFoundPage from './ui/NotFoundPage';
 
 import './index.scss';

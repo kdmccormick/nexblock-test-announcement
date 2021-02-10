@@ -23,6 +23,6 @@ export function getOrders(callback) {
   httpClient.get(DATA_URL, {
     params: {},
   }).then(
-    response => callback(transformedResults(response)),
+    response => callback({ data: transformedResults(response) }),
   );
 }

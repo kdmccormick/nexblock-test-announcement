@@ -6,21 +6,14 @@ import {
 import { ErrorPage } from '@edx/frontend-platform/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
-import ExamplePage from './example/ExamplePage';
 import Announcement from './ui/learner/Announcement';
 
 import './index.scss';
 
 const myStuff = (
   <>
-    <Router>
-      <Switch>
-        <Route path="/example" component={ExamplePage} />
-        <Route path="/announcement" component={Announcement} />
-      </Switch>
-    </Router>
+    <Announcement />
   </>
 );
 

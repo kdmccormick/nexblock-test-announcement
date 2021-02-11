@@ -16,23 +16,23 @@ class Announcement extends React.Component {
     this.state = { open: true };
   }
 
-  openModal() {
-    this.setState({ open: true });
+  componentDidMount() {
+    getOrders().then((response) => this.setState(response));
   }
 
   resetModalWrapperState() {
     this.setState({ open: false });
   }
 
-  componentDidMount() {
-    getOrders().then((response) => this.setState(response));
+  openModal() {
+    this.setState({ open: true });
   }
 
   render() {
-    const { data, open } = this.state
+    const { data, open } = this.state;
     let modal;
     if (data) {
-      modal = <Modal open={open} title={data.title} body={data.body} onClose={() => {}} />
+      modal = <Modal open={open} title={data.title} body={data.body} onClose={() => {}} />;
     }
     return (
       <>

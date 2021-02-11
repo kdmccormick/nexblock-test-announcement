@@ -12,11 +12,10 @@ class Announcement extends React.Component {
   }
 
   componentDidMount() {
-    getOrders(this.setState);
+    getOrders().then((response) => this.setState(response));
   }
 
   render() {
-    console.log('hello');
     return (
       <main>
         <div className="container-fluid">

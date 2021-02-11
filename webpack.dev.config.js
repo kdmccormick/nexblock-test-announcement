@@ -11,7 +11,7 @@ module.exports = createConfig('webpack-dev', {
   plugins: [
     new ModuleFederationPlugin({
       name: 'plugin',
-      filename: 'index.js',
+      filename: 'remoteEntry.js',
       exposes: {
         './Announcement': './src/ui/learner/Announcement',
       },

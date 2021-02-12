@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal } from '@edx/paragon';
 
 class Announcement extends React.Component {
@@ -12,10 +13,6 @@ class Announcement extends React.Component {
     this.state = { open: true };
   }
 
-  componentDidMount() {
-    getOrders().then((response) => this.setState(response));
-  }
-
   resetModalWrapperState() {
     this.setState({ open: false });
   }
@@ -25,7 +22,7 @@ class Announcement extends React.Component {
   }
 
   render() {
-    const { data } = this.state;
+    const { open } = this.state;
     const data = this.props.instanceData;
     let modal;
     if (data) {
@@ -40,5 +37,16 @@ class Announcement extends React.Component {
     );
   }
 }
+
+Announcement.propTypes = {
+  instanceData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+  }),
+};
+
+Announcement.defaultProps = {
+  instanceData: { title: 'Loading...', body: '' },
+};
 
 export default Announcement;

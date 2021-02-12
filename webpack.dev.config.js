@@ -31,6 +31,10 @@ module.exports = createConfig('webpack-dev', {
           requiredVersion: deps['@edx/frontend-platform'],
           singleton: true,
         },
+        '@edx/frontend-platform/auth': {
+          requiredVersion: deps['@edx/frontend-platform'],
+          singleton: true,
+        },
       },
     }),
   ],
